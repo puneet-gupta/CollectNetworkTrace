@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectNetworkTrace", "CollectNetworkTrace\CollectNetworkTrace.csproj", "{23792EFC-3044-4EBF-8D25-69459D9E465C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23792EFC-3044-4EBF-8D25-69459D9E465C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23792EFC-3044-4EBF-8D25-69459D9E465C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23792EFC-3044-4EBF-8D25-69459D9E465C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23792EFC-3044-4EBF-8D25-69459D9E465C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C7E15D5E-5871-4697-8EAE-ADE6DF6D7EA0}
+	EndGlobalSection
+EndGlobal
