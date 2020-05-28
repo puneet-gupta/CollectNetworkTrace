@@ -65,7 +65,7 @@ namespace CollectNetworkTrace
         private static string GetConfigurationValue(string key)
         {
             var value = ConfigurationManager.AppSettings[key];
-            if (string.IsNullOrWhiteSpace(value))
+            if (string.IsNullOrWhiteSpace(value) || value.StartsWith("your", StringComparison.OrdinalIgnoreCase))
             {
                 value = Environment.GetEnvironmentVariable(key);
             }
