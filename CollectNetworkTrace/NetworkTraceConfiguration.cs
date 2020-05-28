@@ -65,18 +65,18 @@ namespace CollectNetworkTrace
         private static string GetConfigurationValue(string key)
         {
             var value = ConfigurationManager.AppSettings[key];
-            if (string.IsNullOrWhiteSpace(value) || value.StartsWith("your", StringComparison.OrdinalIgnoreCase))
+            var envVar = Environment.GetEnvironmentVariable(key);
+            if (!string.IsNullOrEmpty(envVar))
             {
-                value = Environment.GetEnvironmentVariable(key);
+                value = envVar;
             }
-
             if (string.IsNullOrWhiteSpace(value))
             {
                 throw new ApplicationException($"Key {key} is not set in configuration");
             }
             if (value.StartsWith("your", StringComparison.OrdinalIgnoreCase))
             {
-                throw new ApplicationException($"Please specifiy the setting {key} either in CollectNetworkTrace.exe.config or as an APP SETTING for the app");
+                throw new ApplicationException($"Please specify the setting {key} either in CollectNetworkTrace.exe.config or as an APP SETTING for the app");
             }
             return value;
         }
