@@ -67,6 +67,11 @@ namespace CollectNetworkTrace
             var value = ConfigurationManager.AppSettings[key];
             if (string.IsNullOrWhiteSpace(value))
             {
+                value = Environment.GetEnvironmentVariable(key);
+            }
+
+            if (string.IsNullOrWhiteSpace(value))
+            {
                 throw new ApplicationException($"Key {key} is not set in configuration");
             }
             if (value.StartsWith("your", StringComparison.OrdinalIgnoreCase))
