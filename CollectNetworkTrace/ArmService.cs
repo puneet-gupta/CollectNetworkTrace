@@ -38,7 +38,14 @@ namespace CollectNetworkTrace
                     Utility.Trace($"Sleeping for {duration} seconds");
                     Thread.Sleep(duration * 1000);
                     var networkTraceFile = GetTraceFile(armOperationStatus);
-                    Utility.Trace($"Trace File captured at {networkTraceFile} hence exiting...");
+                    if (string.IsNullOrWhiteSpace(networkTraceFile))
+                    {
+                        Utility.Trace($"The network trace call finished but no file is generated probably because no packets were captured during the trace duration.");
+                    }
+                    else
+                    {
+                        Utility.Trace($"Trace File captured at {networkTraceFile} hence exiting...");
+                    }
                 }
             }
             else

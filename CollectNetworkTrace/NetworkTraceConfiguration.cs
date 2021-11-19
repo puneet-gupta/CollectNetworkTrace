@@ -41,7 +41,7 @@ namespace CollectNetworkTrace
                 SiteName = GetEnvironmentVariable("WEBSITE_SITE_NAME"),
                 ResourceGroup = GetEnvironmentVariable("WEBSITE_RESOURCE_GROUP"),
                 SubscriptionId = GetSubscriptionId(),
-                SlotName = GetConfigurationValue("NETWORKTRACE_SLOTNAME")
+                SlotName = ConfigurationManager.AppSettings["NETWORKTRACE_SLOTNAME"]
             };
 
             return secret;
