@@ -17,8 +17,9 @@ namespace CollectNetworkTrace
                 string siteName = _siteName;
                 if (!string.IsNullOrWhiteSpace(SlotName))
                 {
-                    siteName = $"{siteName}({SlotName})";
+                    siteName = $"{siteName}/slots/{SlotName}";
                 }
+
                 return siteName;
             }
             internal set
@@ -38,9 +39,9 @@ namespace CollectNetworkTrace
                 ClientId = GetConfigurationValue("NETWORKTRACE_CLIENTID"),
                 Secret = GetConfigurationValue("NETWORKTRACE_CLIENTSECRET"),
                 SiteName = GetEnvironmentVariable("WEBSITE_SITE_NAME"),
-                ResourceGroup =   GetEnvironmentVariable("WEBSITE_RESOURCE_GROUP"),
+                ResourceGroup = GetEnvironmentVariable("WEBSITE_RESOURCE_GROUP"),
                 SubscriptionId = GetSubscriptionId(),
-                SlotName = ConfigurationManager.AppSettings["NETWORKTRACE_SLOTNAME"]
+                SlotName = GetConfigurationValue("NETWORKTRACE_SLOTNAME")
             };
 
             return secret;
